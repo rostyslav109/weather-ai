@@ -81,8 +81,8 @@ function App() {
   return (
     <div className="app">
       <h1>Weather AI Pet</h1>
-      <SearchBar onSearch={setCity} />
-      
+      <SearchBar onSearch={setCity} disabled={loading}/>
+
       {loading && <p>Завантаження...</p>}
       {error && <p>Помилка: {error}</p>}
       {weather && <WeatherCard weather={weather}/>}

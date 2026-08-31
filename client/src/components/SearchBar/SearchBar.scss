@@ -17,6 +17,12 @@
     }
   }
 
+    input:disabled,
+    button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
   button {
     padding: v.$spacing-sm v.$spacing-md;
     border: none;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './SearchBar.scss'
 
-function SearchBar({onSearch}) {
+function SearchBar({onSearch, disabled}) {
     const [city, setCity] = useState('')
 
     const handleSubmit = (event) => {
@@ -17,8 +17,9 @@ function SearchBar({onSearch}) {
             value={city}
             onChange={(event) => setCity(event.target.value)}
             placeholder="Введи назву міста"
+            disabled={disabled}
         />
-            <button type="submit">Пошук</button>
+            <button type="submit" disabled={disabled}>Пошук</button>
         </form>
     )
 }
