@@ -1,0 +1,11 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.advice-card {
+  @include m.card;
+  max-width: 320px;
+  width: 100%;
+  background: v.$color-primary;
+  color: white;
+  font-style: italic;
+}

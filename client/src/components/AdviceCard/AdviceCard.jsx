@@ -1,3 +1,5 @@
+import './AdviceCard.scss'
+
 function AdviceCard({advice}){
     return (
         <div className="advice-card">

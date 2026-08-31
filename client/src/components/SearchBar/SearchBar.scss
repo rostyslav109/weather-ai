@@ -1,0 +1,33 @@
+@use 'sass:color';
+@use '../../styles/variables' as v;
+
+.search-bar {
+  display: flex;
+  gap: v.$spacing-sm;
+
+  input {
+    padding: v.$spacing-sm v.$spacing-md;
+    border: 1px solid v.$color-muted;
+    border-radius: v.$radius;
+    font-size: 1rem;
+    outline: none;
+
+    &:focus {
+      border-color: v.$color-primary;
+    }
+  }
+
+  button {
+    padding: v.$spacing-sm v.$spacing-md;
+    border: none;
+    border-radius: v.$radius;
+    background: v.$color-primary;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background: color.adjust(v.$color-primary, $lightness: -10%);
+    }
+  }
+}

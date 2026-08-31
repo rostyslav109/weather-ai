@@ -1,3 +1,5 @@
+import './WeatherCard.scss'
+
 function WeatherCard({weather}){
     return(
         <div className="weather-card">

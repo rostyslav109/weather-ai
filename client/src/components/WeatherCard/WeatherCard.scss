@@ -1,0 +1,21 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.weather-card {
+  @include m.card;
+  max-width: 320px;
+  width: 100%;
+
+  h2 {
+    margin-bottom: v.$spacing-sm;
+  }
+
+  p {
+    margin-bottom: v.$spacing-sm;
+    color: v.$color-muted;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
