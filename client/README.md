@@ -1,16 +1,39 @@
-# React + Vite
+# Weather AI Pet
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Легкий погодний застосунок, що показує поточні умови та випадкову AI-пораду залежно від міста.
 
-Currently, two official plugins are available:
+Пет-проєкт для практики: інтеграція зовнішніх API (OpenWeatherMap, OpenAI), обробка даних на бекенді, структура full-stack застосунку (React + Node.js/Express), стилізація через SASS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Стек
+- Frontend: React (Vite), SASS
+- Backend: Node.js, Express
+- Зовнішні API: OpenWeatherMap, OpenAI
 
-## React Compiler
+## Функціонал
+- Пошук погоди за назвою міста
+- Відображення температури, опису, вологості, вітру
+- Випадкова порада, згенерована на основі поточної погоди
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Запуск локально
 
-## Expanding the Oxlint configuration
+### Backend
+\`\`\`
+cd server
+npm install
+npm run dev
+\`\`\`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Створи `server/.env`:
+\`\`\`
+PORT=4000
+OPENWEATHER_API_KEY=твій_ключ
+\`\`\`
+
+### Frontend
+\`\`\`
+cd client
+npm install
+npm run dev
+\`\`\`
+
+Застосунок буде доступний на `http://localhost:5173`, бекенд — на `http://localhost:4000`.
