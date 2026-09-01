@@ -1,39 +1,86 @@
 @use 'sass:color';
 @use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
 
 .search-bar {
+  @include m.glass(0.4, 16px);
+  border-radius: 999px;
   display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  padding: v.$spacing-sm v.$spacing-sm v.$spacing-sm v.$spacing-lg;
   gap: v.$spacing-sm;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:focus-within {
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.18);
+    transform: translateY(-2px);
+  }
 
   input {
-    padding: v.$spacing-sm v.$spacing-md;
-    border: 1px solid v.$color-muted;
-    border-radius: v.$radius;
+    flex: 1;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    padding: v.$spacing-sm 0;
     font-size: 1rem;
     outline: none;
+    color: v.$color-text;
 
-    &:focus {
-      border-color: v.$color-primary;
+    &::placeholder {
+      color: v.$color-muted;
     }
   }
 
-    input:disabled,
-    button:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
+  &__location {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    font-size: 1.05rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, transform 0.1s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.7);
+      transform: scale(1.05);
     }
 
-  button {
-    padding: v.$spacing-sm v.$spacing-md;
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  button[type='submit'] {
+    flex-shrink: 0;
+    padding: v.$spacing-sm v.$spacing-lg;
     border: none;
-    border-radius: v.$radius;
+    border-radius: 999px;
     background: v.$color-primary;
     color: white;
     font-size: 1rem;
+    font-weight: 500;
     cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
 
     &:hover {
-      background: color.adjust(v.$color-primary, $lightness: -10%);
+      background: color.adjust(v.$color-primary, $lightness: -8%);
     }
+
+    &:active {
+      transform: scale(0.96);
+    }
+  }
+
+  input:disabled,
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }

@@ -1,0 +1,33 @@
+export const translations = {
+  uk: {
+    searchPlaceholder: 'Введи назву міста',
+    searchButton: 'Пошук',
+    loadingWeather: 'Завантаження...',
+    loadingAdvice: 'Готуємо пораду...',
+    error: 'Помилка',
+    feelsLike: 'відчувається як',
+    humidity: 'Вологість',
+    wind: 'Вітер',
+    windUnit: 'м/с',
+    useMyLocation: 'Використати мою локацію',
+    favorites: 'Улюблені',
+    recentSearches: 'Останні пошуки',
+    toggleFavorite: 'Додати/прибрати з улюблених',
+  },
+  
+  en: {
+    searchPlaceholder: 'Enter city name',
+    searchButton: 'Search',
+    loadingWeather: 'Loading...',
+    loadingAdvice: 'Preparing advice...',
+    error: 'Error',
+    feelsLike: 'feels like',
+    humidity: 'Humidity',
+    wind: 'Wind',
+    windUnit: 'm/s',
+    useMyLocation: 'Use my location',
+    favorites: 'Favorites',
+    recentSearches: 'Recent searches',
+    toggleFavorite: 'Toggle favorite',
+  },
+}

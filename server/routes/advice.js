@@ -4,14 +4,14 @@ import {getAdvice} from '../services/adviceService.js';
 const router = Router();
 
 router.post('/', async (req, res) => {
-    const {city, temperature, description} = req.body;
+    const {city, temperature, description, isDaytime, localTime, language} = req.body;
 
-    if(!city || temperature === undefined || !description){
-        return res.status(400).json({error: 'Потрібні city, temperature і description'});   
+    if(!city || temperature === undefined || !description || isDaytime === undefined){
+        return res.status(400).json({error: 'Потрібні city, temperature, description і isDaytime'});   
     }
 
     try{
-        const advice = await getAdvice({city,temperature,description});
+        const advice = await getAdvice({city,temperature,description, isDaytime, localTime, language});
         res.json({advice});
     }catch(err){
         console.error(err);

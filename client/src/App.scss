@@ -7,4 +7,84 @@
   gap: v.$spacing-md;
   padding: v.$spacing-lg;
   text-align: center;
+
+  .sky{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(180deg, v.$sky-top 0%, v.$sky-mid 45%, v.$sky-bottom 100%);
+  }
+
+  .cloud{
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    filter: blur(40px);
+    animation: drift ease-in-out infinite alternate;
+  }
+
+  .cloud--1 {
+    width: 320px;
+    height: 320px;
+    top: 8%;
+    left: -5%;
+    animation-duration: 50s;
+  }
+
+  .cloud--2 {
+    width: 260px;
+    height: 260px;
+    top: 40%;
+    right: -8%;
+    animation-duration: 60s;
+    animation-delay: -10s;
+  }
+
+  .cloud--3 {
+    width: 200px;
+    height: 200px;
+    bottom: 5%;
+    left: 20%;
+    animation-duration: 45s;
+    animation-delay: -20s;
+  }
+
+  @keyframes drift{
+    from{transform: translate(0, 0);}
+    to{transform: translate(40px, 20px);}
+  }
+
+  .controls {
+    display: flex;
+    gap: v.$spacing-md;
+  }
+
+  .toggle-group {
+    display: flex;
+    gap: v.$spacing-sm;
+
+    button {
+      padding: 4px 10px;
+      border: 1px solid v.$color-muted;
+      border-radius: v.$radius;
+      background: transparent;
+      cursor: pointer;
+
+      &.active {
+        background: v.$color-primary;
+        color: white;
+        border-color: v.$color-primary;
+      }
+    }
+  }
+
+  .city-lists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: v.$spacing-md;
+    width: 100%;
+    margin-top: v.$spacing-sm;
+  }
 }

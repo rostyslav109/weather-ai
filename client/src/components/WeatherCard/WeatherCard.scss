@@ -2,20 +2,61 @@
 @use '../../styles/mixins' as m;
 
 .weather-card {
-  @include m.card;
-  max-width: 320px;
+  @include m.glass;
+  max-width: 340px;
   width: 100%;
+  padding: v.$spacing-lg;
+  text-align: left;
+  animation: fadeSlideUp 0.4s ease;
 
-  h2 {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: v.$spacing-sm;
     margin-bottom: v.$spacing-sm;
+
+    h2 {
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .favorite-button {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.1s ease;
+
+    &:hover {
+      transform: scale(1.15);
+    }
   }
 
   p {
     margin-bottom: v.$spacing-sm;
-    color: v.$color-muted;
+    color: v.$color-text;
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
